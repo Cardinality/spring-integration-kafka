@@ -163,8 +163,7 @@ public class KafkaProducerMessageHandlerTests {
 		assertThat(record).has(timestamp(1487694048607L));
 		Map<String, Object> headers = new HashMap<>();
 		new DefaultKafkaHeaderMapper().toHeaders(record.headers(), headers);
-		assertThat(headers.size()).isEqualTo(1);
-		assertThat(headers.get("baz")).isEqualTo("qux");
+		assertThat(headers.size()).isEqualTo(0);
 	}
 
 	@Test
