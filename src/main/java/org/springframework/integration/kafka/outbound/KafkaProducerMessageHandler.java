@@ -92,9 +92,6 @@ public class KafkaProducerMessageHandler<K, V> extends AbstractMessageProducingH
 	public KafkaProducerMessageHandler(final KafkaTemplate<K, V> kafkaTemplate) {
 		Assert.notNull(kafkaTemplate, "kafkaTemplate cannot be null");
 		this.kafkaTemplate = kafkaTemplate;
-		if (JacksonPresent.isJackson2Present()) {
-			this.headerMapper = new DefaultKafkaHeaderMapper();
-		}
 	}
 
 	public void setTopicExpression(Expression topicExpression) {
